@@ -119,3 +119,13 @@ func (d *Duration) ToDuration() time.Duration {
 
 	return tot
 }
+
+func ParseISO8601Duration(s string) (time.Duration, error) {
+	var Δ time.Duration
+	dur, err := FromString(s)
+	if err != nil {
+		return Δ, err
+	}
+	Δ = dur.ToDuration()
+	return Δ, nil
+}
